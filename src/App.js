@@ -10,11 +10,11 @@ function App() {
     setTaskList([{id: Date.now(), task: userInput, complete: false }, ...taskList])
     setUserInput("")}
   
-  function handleStrike(index) {setTaskList(taskList.map(obj => taskList.indexOf(obj) == index ? {...obj, complete: !obj.complete} : obj))}
+  function handleStrike(index) {setTaskList(taskList.map(obj => taskList.indexOf(obj) === index ? {...obj, complete: !obj.complete} : obj))}
   
   function handleDelete(id) {
     //delete selected item in taskList
-    const new_list = taskList.filter(list_item => list_item.id != id)
+    const new_list = taskList.filter(list_item => list_item.id !== id)
     setTaskList(new_list)
   }
   
